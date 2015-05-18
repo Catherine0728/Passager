@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/text_con"
+            style="@style/TextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="50dip"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dip"
+            android:layout_weight="0.5"
+            android:drawablePadding="10dip"
+            android:focusable="false"
+            android:drawableLeft="@drawable/icon_guide"
+            android:focusableInTouchMode="false"
+            android:gravity="center_vertical"
+            android:text="@string/text_default"
+            android:textColor="#000"
+            android:textSize="@dimen/text_five" />
+
+        <TextView
+            android:id="@+id/text_time"
+            style="@style/TextStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dip"
+            android:layout_weight="1"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:gravity="right|center_vertical"
+            android:text="2015-01-13 12:30"
+            android:textColor="#000"
+            android:textSize="@dimen/text_six" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0.1dip"
+        android:alpha="0.5"
+        android:background="@drawable/image_remind_line" />
+
+</LinearLayout>

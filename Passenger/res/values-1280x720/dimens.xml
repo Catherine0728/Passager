@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <dimen name="nav_height">48dip</dimen>
+    <dimen name="group_height">48dip</dimen>
+    <dimen name="menu_height">60dip</dimen>
+    <dimen name="menu_btn_height">50dip</dimen>
+    <dimen name="title_fir_height">48dip</dimen>
+    <dimen name="image_hei_big">127dip</dimen>
+    <dimen name="image_wid_big">182dip</dimen>
+    <dimen name="image_hei_small">127dip</dimen>
+    <dimen name="image_hei">180dip</dimen>
+    <dimen name="image_hei_heng">100dip</dimen>
+    <dimen name="image_wid_small">140dip</dimen>
+    <dimen name="text_one">24dip</dimen>
+    <dimen name="text_two">22dip</dimen>
+    <dimen name="image_height">140dip</dimen>
+    <dimen name="image_width">120dip</dimen>
+    <dimen name="text_three">20dip</dimen>
+    <dimen name="text_four">18dip</dimen>
+    <dimen name="text_five">16dip</dimen>
+    <dimen name="text_six">14dip</dimen>
+    <dimen name="text_seven">12dip</dimen>
+    <dimen name="news_image_head_width">120dip</dimen>
+    <dimen name="news_image_head_height">120dip</dimen>
+    <dimen name="margin_one">10dip</dimen>
+    <dimen name="margin_two">8dip</dimen>
+    <dimen name="margin_three">5dip</dimen>
+    <dimen name="Full_Height">1280dip</dimen>
+    <dimen name="edit_height">42dip</dimen>
+    <dimen name="Full_Width">720dip</dimen>
+    <dimen name="title_bg_height">20dip</dimen>
+    <dimen name="btn_height">60dip</dimen>
+    <dimen name="login_edit_height">40dip</dimen>
+    <dimen name="viewflow_big_height">180dip</dimen>
+
+</resources>

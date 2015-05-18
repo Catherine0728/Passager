@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/image_alert_bg"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/loading"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/image_alert_little_bg"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/text_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发布成功"
+            android:textColor="@color/bg_nav_color"
+            android:textSize="28dip"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/text_toast_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:text="此条信息需要消耗一个点数"
+            android:textColor="@color/bg_nav_color"
+            android:textSize="20dip"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/text_left_point"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:gravity="center"
+            android:text="当前点数：10点"
+            android:textColor="@color/bg_nav_color"
+            android:textSize="20dip"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/dialog_blue_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dip"
+            android:gravity="center"
+            android:text="登录"
+            android:textSize="20dip"
+            android:visibility="visible" />
+        <!-- <ListView -->
+        <!-- android:id="@+id/list" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="30dip" -->
+        <!-- android:layout_weight="1" -->
+        <!-- android:divider="@null" -->
+        <!-- android:gravity="center" -->
+        <!-- android:listSelector="#00000000" -->
+        <!-- android:scrollbars="none" -->
+        <!-- android:visibility="gone" /> -->
+
+        <RadioGroup
+            android:id="@+id/radiogroup_point"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:layout_x="2dp"
+            android:orientation="vertical"
+            android:visibility="gone" >
+
+            <RadioButton
+                android:id="@+id/radiobutton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableLeft="@drawable/radio_selector"
+                android:text="@string/radiobutton1"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:id="@+id/radiobutton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableLeft="@drawable/radio_selector"
+                android:text="@string/radiobutton2"
+                android:textColor="#000" />
+
+            <RadioButton
+                android:id="@+id/radiobutton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:drawableLeft="@drawable/radio_selector"
+                android:text="@string/radiobutton3"
+                android:textColor="#000" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/layout_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dip"
+            android:gravity="center"
+            android:visibility="gone" >
+
+            <Button
+                android:id="@+id/btn_sure"
+                style="@style/dialog_btn_sure"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:text="@string/dialog_ok"
+                android:textSize="20dip" />
+
+            <Button
+                android:id="@+id/btn_exit"
+                style="@style/dialog_btn_exit"
+                android:layout_weight="1"
+                android:text="@string/dialog_cancel"
+                android:textSize="20dip" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout_isregister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="visible" >
+
+            <TextView
+                android:id="@+id/text_one"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right|center_vertical"
+                android:text="没有账号?"
+                android:textColor="@color/bg_nav_color"
+                android:textSize="@dimen/text_four" />
+
+            <TextView
+                android:id="@+id/text_two"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="5dip"
+                android:gravity="left|center_vertical"
+                android:text="立即注册"
+                android:textColor="#34cf95"
+                android:textSize="@dimen/text_four" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_toast"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dip"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="友情提醒：发布消息遵守法律法规"
+            android:textColor="@color/bg_nav_color"
+            android:visibility="gone" />
+    </LinearLayout>
+
+</LinearLayout>

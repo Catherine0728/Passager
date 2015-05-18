@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/btn_height"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/btn_item"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_marginLeft="20dip"
+        android:background="#00000000"
+        android:drawableLeft="@drawable/icon_my"
+        android:drawablePadding="10dip"
+        android:drawableRight="@drawable/icon_my_to"
+        android:gravity="left|center_vertical"
+        android:paddingRight="10dip"
+        android:textColor="#000"
+        android:text="@string/btn_my_center"
+        android:textSize="@dimen/text_four" />
+
+</LinearLayout>

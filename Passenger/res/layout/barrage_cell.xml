@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dip"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dip" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dip"
+            android:background="@drawable/image_barrage_bg"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dip"
+                android:layout_marginTop="10dip"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/text_name"
+                    style="@style/TextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/text_default"
+                    android:textColor="#10b7eb"
+                    android:textSize="@dimen/text_four" />
+
+                <TextView
+                    android:id="@+id/text_time"
+                    style="@style/TextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left|center_vertical"
+                    android:layout_marginRight="15dip"
+                    android:layout_weight="1"
+                    android:gravity="left|center_vertical"
+                    android:text="@string/text_default"
+                    android:textColor="#a2a2a2"
+                    android:textSize="@dimen/text_six" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_con"
+                style="@style/TextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dip"
+                android:layout_marginRight="10dip"
+                android:layout_marginTop="10dip"
+                android:gravity="center_vertical"
+                android:text="@string/text_default"
+                android:textColor="#a2a2a2"
+                android:textSize="@dimen/text_five" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iamge_head"
+            android:layout_width="40dip"
+            android:layout_marginTop="10dip"
+            android:layout_marginLeft="8dip"
+            android:layout_height="40dip"
+            android:background="@drawable/icon_head_one" />
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+
+    <ImageView
+        android:id="@+id/novel_iamge"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/image_height"
+        android:layout_marginRight="5dip"
+        android:layout_marginTop="5dip"
+        android:scaleType="fitXY" />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bg_height"
+        android:layout_marginLeft="5dip"
+        android:layout_marginRight="5dip"
+        android:maxLength="8"
+        android:singleLine="true"
+        android:text="@string/text_default"
+        android:textColor="#000"
+        android:textSize="@dimen/text_six" />
+    <!-- android:background="@drawable/image_botton_title_more" -->
+
+</LinearLayout>

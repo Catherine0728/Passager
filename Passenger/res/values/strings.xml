@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">PMM</string>
+    <string name="text_default">暂无</string>
+    <string name="text_barrage">弹幕</string>
+    <string name="text_remind">提醒</string>
+    <string name="text_download">下载</string>
+    <string name="text_myself">我的</string>
+    <string name="text_watch_moive">现场看电影</string>
+    <string name="text_listen_moive">手机听电影</string>
+    <string name="text_download_moive">高速下电影</string>
+    <string name="text_play_barrage">一起玩弹幕</string>
+    <string name="text_news">新闻</string>
+    <string name="text_vedio">视频</string>
+    <string name="text_nevol">小说</string>
+    <string name="text_game">游戏</string>
+    <string name="check_more">点击查看更多</string>
+    <string name="btn_last">上一篇</string>
+    <string name="btn_next">下一篇</string>
+    <string name="btn_down">立即下载</string>
+    <string name="text_years_tostring">年代：</string>
+    <string name="text_actor_tostring">演员：</string>
+    <string name="text_daoyan_tostring">导演：</string>
+    <string name="text_name_tostring">片名：</string>
+    <string name="btn_intro">视频简介</string>
+    <string name="btn_scan">阅读</string>
+    <string name="btn_road_watch">下载路上继续看</string>
+    <string name="btn_same_voice">手机同步电影声音</string>
+    <string name="btn_play_screen">开始玩弹幕</string>
+    <string name="text_watch_toast">院线正在播放：</string>
+    <string name="btn_comm">提交</string>
+    <string name="edit_hint">请输入少于12个字</string>
+    <string name="dialog_default_title">你还未登录，请先登录！</string>
+    <string name="dialog_ok">确认</string>
+    <string name="text_main">首页</string>
+    <string name="dialog_cancel">取消</string>
+    <string name="btn_login">登  录</string>
+    <string name="btn_register">注  册</string>
+    <string name="btn_clear_cache">清除缓存</string>
+    <string name="btn_advice">意见反馈</string>
+    <string name="btn_about_me">关于我们</string>
+    <string name="btn_my_center">我的账户</string>
+    <string name="download_btn_vedio_string">视频</string>
+    <string name="download_btn_novel_string">小说</string>
+    <string name="download_btn_game_string">游戏</string>
+    <string name="btn_downed">已下载</string>
+    <string name="btn_downing">下载</string>
+    <string name="text_allspace">总容量:</string>
+    <string name="text_leftspace">剩余容量:</string>
+    <string name="text_my_point_name">当前账户点数:</string>
+    <string name="btn_buy">立即购买</string>
+    <string name="radiobutton1">套餐一：     100点   /10元</string>
+    <string name="radiobutton2">套餐二：     200点   /18元</string>
+    <string name="radiobutton3">套餐三：     300点   /25元</string>
+    <string name="mediacontroller_play_pause">Play/Pause</string>
+    <string name="path">下载路径</string>
+    <string name="downloadbutton">下载</string>
+    <string name="sdcarderror">SDCard不存在或者写保护</string>
+    <string name="success">下载完成</string>
+    <string name="error">下载有点慢，请等待...</string>
+    <string name="moive_default">正在热播:</string>
+    <!-- xUtils需要的字符串 -->
+    <string name="download_label">下载地址</string>
+    <string name="download">下载</string>
+    <!-- <string name="stop">暂停</string> -->
+    <!-- <string name="resume">继续</string> -->
+    <!-- <string name="retry">重试</string> -->
+    <!-- <string name="remove">删除</string> -->
+    <string name="over">观看</string>
+    <string name="test">测试</string>
+    <string name="edit">编辑</string>
+    <string name="cancel">取消</string>
+
+</resources>

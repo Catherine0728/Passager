@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Scorll_Style"
+    android:background="@drawable/image_login_bg" >
+
+    <LinearLayout
+        android:id="@+id/layout_touch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="#fff"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="270dip"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <EditText
+                android:id="@+id/edit_username"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_edit_height"
+                android:layout_gravity="center"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:background="@drawable/edit_selector"
+                android:hint="请输入用户名"
+                android:inputType="textEmailAddress"
+                android:paddingLeft="15dip"
+                android:textSize="@dimen/text_five" />
+
+            <EditText
+                android:id="@+id/edit_Pass"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_edit_height"
+                android:layout_margin="15dip"
+                android:background="@drawable/edit_selector"
+                android:hint="请输入密码"
+                android:inputType="number"
+                android:paddingLeft="15dip"
+                android:password="true"
+                android:textSize="@dimen/text_five" />
+            <!-- </LinearLayout> -->
+
+
+            <!-- <LinearLayout -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_gravity="center_horizontal" -->
+            <!-- android:layout_marginLeft="10dip" -->
+            <!-- android:layout_marginRight="10dip" -->
+            <!-- android:layout_marginTop="10dip" -->
+            <!-- android:gravity="center" -->
+            <!-- android:orientation="horizontal" > -->
+
+            <EditText
+                android:id="@+id/edit_Number"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_edit_height"
+                android:layout_marginLeft="15dip"
+                android:layout_marginRight="15dip"
+                android:background="@drawable/edit_selector"
+                android:hint="手机号码"
+                android:inputType="number"
+                android:maxLength="11"
+                android:paddingLeft="15dip"
+                android:textSize="@dimen/text_five" />
+            <!-- </LinearLayout> -->
+
+            <TextView
+                android:id="@+id/text_error"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:text="用户名或密码输入有误"
+                android:textColor="#000"
+                android:textSize="@dimen/text_six"
+                android:visibility="invisible" />
+
+            <Button
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/login_edit_height"
+                android:layout_marginLeft="10dip"
+                android:layout_marginRight="10dip"
+                android:background="@drawable/image_login_btn_ok"
+                android:text="@string/btn_register"
+                android:textColor="#fff"
+                android:textSize="@dimen/text_four" />
+        </LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

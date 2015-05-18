@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <RadioGroup
+        android:id="@+id/radiogroup"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:background="@drawable/image_vedio_btn_nav"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/btn_1"
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:layout_weight="1"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="简介"
+            android:textColor="@android:color/black"
+            android:textSize="20.0sp" />
+        <!-- android:background="@drawable/radio" -->
+
+        <RadioButton
+            android:id="@+id/btn_0"
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:layout_weight="0.3"
+            android:button="@null"
+            android:gravity="left|center_vertical"
+            android:text="章节列表"
+            android:textColor="@android:color/black"
+            android:textSize="20.0sp" />
+    </RadioGroup>
+
+    <ViewFlipper
+        android:id="@+id/viewflipper"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

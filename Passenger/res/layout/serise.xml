@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ListView
+        android:id="@+id/list_serise"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="5dip"
+        android:divider="@drawable/image_remind_line"
+        android:listSelector="@color/bg_nav_color"
+        android:scrollbars="none" />
+
+
+</FrameLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/margin_three" >
+
+    <TextView
+        android:id="@+id/text_space_size"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dip"
+        android:gravity="left|center_vertical"
+        android:text="@string/text_allspace"
+        android:textColor="#000"
+        android:textSize="@dimen/text_five" />
+
+    <TextView
+        android:id="@+id/text_allspace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dip"
+        android:gravity="center"
+        android:text="@string/text_default"
+        android:textColor="#000"
+        android:textSize="@dimen/text_four" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_marginLeft="30dip"
+        android:text="@string/text_leftspace"
+        android:textColor="#000"
+        android:textSize="@dimen/text_five" />
+
+    <TextView
+        android:id="@+id/text_leftspace"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dip"
+        android:gravity="center"
+        android:text="@string/text_default"
+        android:textColor="#f00"
+        android:textSize="@dimen/text_five" />
+
+</LinearLayout>

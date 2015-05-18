@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 重新定义了下载的布局 -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+       tools:context="${relativePackage}.${activityClass}" >
+
+    <LinearLayout
+        android:id="@+id/layout_nav"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_height"
+        android:layout_gravity="top"
+        android:background="#1DD4FF"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/btn_return"
+            android:layout_width="100dip"
+            android:layout_height="@dimen/nav_height"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableLeft="@drawable/icon_return"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dip" />
+
+        <TextView
+            android:id="@+id/text_nav_title"
+            style="@style/TextStyle"
+            android:layout_width="60dip"
+            android:layout_height="@dimen/nav_height"
+            android:layout_marginRight="10dip"
+            android:layout_weight="1"
+            android:gravity="right|center_vertical"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_four" />
+        <!-- android:layout_marginLeft="40dip" -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/layout_nav"
+        android:background="@color/light_grey"
+        android:orientation="vertical" >
+
+        <RadioGroup
+            android:id="@+id/radiogroup"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/title_fir_height"
+            android:background="@color/fragment_white"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/btn_0"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_fir_height"
+                android:layout_weight="1.2"
+                android:background="@drawable/radio"
+                android:button="@null"
+                android:checked="true"
+                android:gravity="center"
+                android:text="@string/download_btn_vedio_string"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_four" />
+
+            <RadioButton
+                android:id="@+id/btn_1"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/title_fir_height"
+                android:layout_marginLeft="10dip"
+                android:layout_weight="1.2"
+                android:background="@drawable/radio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/download_btn_novel_string"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_four" />
+
+            <RadioButton
+                android:id="@+id/btn_2"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/title_fir_height"
+                android:layout_weight="1.2"
+                android:background="@drawable/radio"
+                android:button="@null"
+                android:gravity="center"
+                android:text="@string/download_btn_game_string"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/text_four" />
+        </RadioGroup>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dip" >
+
+            <!-- a9d7fe -->
+
+
+            <!-- <ListView -->
+            <!-- android:id="@+id/list_down" -->
+            <!-- android:layout_width="fill_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:background="@color/transport" -->
+            <!-- android:divider="@null" -->
+            <!-- android:listSelector="@color/transport" -->
+            <!-- android:scrollbars="none" /> -->
+
+            <ListView
+                android:id="@android:id/list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:divider="@null"
+                android:layout_margin="15dip"
+                android:listSelector="@color/transport"
+                android:scrollbars="none" >
+            </ListView>
+
+            <!-- <LinearLayout -->
+            <!-- android:id="@+id/layout_toast" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_gravity="center" -->
+            <!-- android:alpha="0.5" -->
+            <!-- android:gravity="center" -->
+            <!-- android:orientation="vertical" > -->
+
+
+            <!-- <TextView -->
+            <!-- android:id="@+id/text_toast" -->
+            <!-- android:layout_width="match_parent" -->
+            <!-- android:layout_height="wrap_content" -->
+            <!-- android:layout_gravity="center" -->
+            <!-- android:gravity="center" -->
+            <!-- android:text="当前无下载...." -->
+            <!-- android:textColor="#000" -->
+            <!-- android:textSize="@dimen/text_three" /> -->
+            <!-- </LinearLayout> -->
+
+            <LinearLayout
+                android:id="@+id/layout_bottom_space"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/nav_height"
+                android:layout_below="@id/list_down"
+                android:layout_gravity="bottom"
+                android:background="#1DD4FF"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:visibility="gone" >
+
+                <Button
+                    android:id="@+id/btn_allselect"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:text="全选"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/text_four" />
+
+                <TextView
+                    android:layout_width="0.1dip"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dip"
+                    android:alpha="0.3"
+                    android:background="#000" />
+
+                <Button
+                    android:id="@+id/btn_exit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="#00000000"
+                    android:text="删除"
+                    android:textColor="#fff"
+                    android:textSize="@dimen/text_four" />
+            </LinearLayout>
+        </FrameLayout>
+        <!-- </ScrollView> -->
+
+    </LinearLayout>
+
+</RelativeLayout>

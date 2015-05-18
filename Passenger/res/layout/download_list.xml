@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 这是实现xUitls的list -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/bg_nav_color"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="下载"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_one" />
+
+        <Button
+            android:id="@+id/btn_return"
+            android:layout_width="100dip"
+            android:layout_height="@dimen/nav_height"
+            android:layout_marginLeft="15dip"
+            android:background="#00000000"
+            android:drawableLeft="@drawable/icon_return"
+            android:gravity="left|center_vertical" />
+
+        <Button
+            android:id="@+id/btn_edit"
+            android:layout_width="100dip"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dp"
+            android:background="#00000000"
+            android:gravity="right|center_vertical"
+            android:text="编辑"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_three" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_height"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/bg_nav_color"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <!-- <TextView -->
+        <!-- android:layout_width="0dp" -->
+        <!-- android:layout_height="wrap_content" -->
+        <!-- android:layout_gravity="center" -->
+        <!-- android:gravity="center" -->
+        <!-- android:text="下载" -->
+        <!-- android:textColor="#fff" -->
+        <!-- android:textSize="22sp" /> -->
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:gravity="center"
+            android:text="删除"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_two" />
+
+        <TextView
+            android:layout_width="0.1dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.001"
+            android:alpha="0.5"
+            android:background="#999" />
+
+        <Button
+            android:id="@+id/btn_select_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:gravity="center"
+            android:text="全选"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_two" />
+    </LinearLayout>
+
+    <RadioGroup
+        android:id="@+id/radiogroup_list"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/title_fir_height"
+        android:layout_below="@id/layout_top"
+        android:background="@color/fragment_white"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/btn_list_0"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/title_fir_height"
+            android:layout_weight="1.2"
+            android:background="@drawable/radio"
+            android:button="@null"
+            android:checked="true"
+            android:gravity="center"
+            android:text="@string/download_btn_vedio_string"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_four" />
+
+        <RadioButton
+            android:id="@+id/btn_list_1"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/title_fir_height"
+            android:layout_weight="1.2"
+            android:background="@drawable/radio"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/download_btn_novel_string"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_four" />
+
+        <RadioButton
+            android:id="@+id/btn_list_2"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/title_fir_height"
+            android:layout_weight="1.2"
+            android:background="@drawable/radio"
+            android:button="@null"
+            android:gravity="center"
+            android:text="@string/download_btn_game_string"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/text_four" />
+    </RadioGroup>
+
+    <ListView
+        android:id="@+id/download_list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@id/layout_bottom"
+        android:layout_below="@id/radiogroup_list"
+        android:background="#fff"
+        android:listSelector="#00000000"
+        android:scrollbars="none" >
+    </ListView>
+
+</RelativeLayout>

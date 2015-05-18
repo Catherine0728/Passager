@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/layout_nav"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_height"
+        android:layout_gravity="top"
+        android:background="@color/bg_nav_color"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+              android:paddingLeft="10dip"
+            android:layout_height="@dimen/nav_height"
+            android:layout_weight="1" >
+
+            <Button
+                android:id="@+id/btn_return"
+                android:layout_width="100dip"
+                android:layout_marginLeft="5dip"
+                android:layout_height="@dimen/nav_height"
+                android:background="#00000000"
+                android:drawableLeft="@drawable/icon_return"
+                android:gravity="left|center_vertical"
+              
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/btn_logo"
+                android:layout_width="100dip"
+                android:layout_height="@dimen/nav_height"
+                android:background="#00000000"
+                android:drawableLeft="@drawable/icon_logo"
+                android:gravity="left|center_vertical"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/text_nav_title"
+            style="@style/TextStyle"
+            android:layout_width="60dip"
+            android:layout_height="@dimen/nav_height"
+            android:layout_marginRight="10dip"
+            android:gravity="right|center_vertical"
+            android:text=""
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_four" />
+        <!-- android:layout_marginLeft="40dip" -->
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/menu_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/bg_nav_color"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <FrameLayout
+            android:id="@+id/layout_isBarrage"
+            android:layout_width="@dimen/menu_height"
+            android:layout_height="@dimen/menu_btn_height"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="3dip"
+            android:layout_weight="1"
+            android:gravity="center" >
+
+            <Button
+                android:id="@+id/btn_barrage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:drawableTop="@drawable/icon_barrage_default"
+                android:text="@string/text_barrage"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/text_six"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/btn_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#00000000"
+                android:drawableTop="@drawable/icon_base_main"
+                android:text="@string/text_main"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="@dimen/text_six"
+                android:visibility="gone" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/btn_remind"
+            android:layout_width="@dimen/menu_height"
+            android:layout_height="@dimen/menu_btn_height"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="3dip"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableTop="@drawable/icon_alert_default"
+            android:gravity="center"
+            android:text="@string/text_remind"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="@dimen/text_six" />
+
+        <Button
+            android:id="@+id/btn_download"
+            android:layout_width="@dimen/menu_height"
+            android:layout_height="@dimen/menu_btn_height"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="3dip"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableTop="@drawable/icon_base_down"
+            android:gravity="center"
+            android:text="@string/text_download"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="@dimen/text_six" />
+
+        <Button
+            android:id="@+id/btn_myself"
+            android:layout_width="@dimen/menu_height"
+            android:layout_height="@dimen/menu_btn_height"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="3dip"
+            android:layout_weight="1"
+            android:background="#00000000"
+            android:drawableTop="@drawable/icon_my_default"
+            android:gravity="center"
+            android:text="@string/text_myself"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textSize="@dimen/text_six" />
+    </LinearLayout>
+
+    <!-- <ScrollView -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="match_parent" -->
+    <!-- android:layout_above="@id/bottom_layout" -->
+    <!-- android:layout_below="@id/layout_nav" -->
+    <!-- android:background="@color/fragment_white" > -->
+
+    <FrameLayout
+        android:id="@+id/body_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/bottom_layout"
+        android:layout_below="@id/layout_nav"
+        android:background="@color/fragment_white" >
+    </FrameLayout>
+    <!-- </ScrollView> -->
+
+    <LinearLayout
+        android:id="@+id/layout_city"
+        android:layout_width="70dip"
+        android:layout_height="120dip"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dip"
+        android:layout_marginTop="50dip"
+        android:background="#1DD4FF"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone" >
+
+        <ListView
+            android:id="@+id/listview_city"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:divider="@null"
+            android:listSelector="#00000000"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+</RelativeLayout>

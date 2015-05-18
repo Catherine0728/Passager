@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/bg_nav_color"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="小说列表"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_one" />
+
+        <Button
+            android:id="@+id/btn_return"
+            android:layout_width="100dip"
+            android:layout_height="@dimen/nav_height"
+            android:layout_marginLeft="15dip"
+            android:background="#00000000"
+            android:drawableLeft="@drawable/icon_return"
+            android:gravity="left|center_vertical" />
+    </FrameLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshGridView
+        android:id="@+id/main_novel_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dip"
+        android:layout_marginTop="5dip"
+        android:divider="@null"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:listSelector="#00000000"
+        android:numColumns="3"
+        android:scrollbars="none"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrMode="pullFromEnd" />
+    <!-- ptr:ptrDrawable="@drawable/default_ptr_flip" -->
+
+
+    <!-- <Button -->
+    <!-- android:id="@+id/btn_More_novel" -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="60dip" -->
+    <!-- android:layout_margin="10dip" -->
+    <!-- android:background="@drawable/image_bottom_checkmore_btn" -->
+    <!-- android:text="@string/check_more" -->
+    <!-- android:textSize="@dimen/text_four" /> -->
+    <!-- </RelativeLayout> -->
+
+</LinearLayout> <!-- </ScrollView> -->

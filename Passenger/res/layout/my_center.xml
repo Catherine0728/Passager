@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/viewflow_big_height"
+        android:layout_gravity="center"
+        android:background="@drawable/image_register_top_bg"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/image_head"
+            android:layout_width="80dip"
+            android:layout_height="80dip"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_head_side" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="93dip"
+            android:layout_height="26dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dip"
+            android:background="@drawable/icon_login_name"
+            android:gravity="center"
+            android:text=""
+            android:textColor="#354b56"
+            android:textSize="@dimen/text_five" />
+    </LinearLayout>
+
+    <ScrollView style="@style/Scorll_Style" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/list_center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@drawable/image_remind_line"
+                android:listSelector="#00000000"
+                android:scrollbars="none" />
+
+            <TextView
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="0.1dip"
+                android:background="@drawable/image_remind_line" />
+
+            <Button
+                android:id="@+id/btn_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dip"
+                android:layout_marginBottom="20dip"
+                android:background="@drawable/image_exit"
+                android:gravity="center"
+                android:text="退出账号"
+                android:textColor="#fff"
+                android:textSize="@dimen/text_four" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

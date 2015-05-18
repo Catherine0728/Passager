@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/edit_mess"
+        android:layout_width="fill_parent"
+        android:layout_height="200dip"
+        android:layout_margin="10dip"
+        android:background="@drawable/edit_selector"
+        android:gravity="top"
+        android:hint="留言"
+        android:paddingTop="10dip"
+        android:paddingLeft="10dip"
+        android:textColor="#000"
+        android:textSize="@dimen/text_five" />
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_margin="10dip"
+        android:background="@drawable/edit_selector"
+        android:hint="QQ或者电子邮箱（必填）"
+        android:paddingLeft="10dip"
+        android:textColor="#000"
+        android:textSize="@dimen/text_five" />
+
+    <TextView
+        android:id="@+id/text_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:text="请确定是否全部填完！"
+        android:textColor="#f00"
+        android:textSize="14dip"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/btn_send"
+        style="@style/Button_Style"
+        android:layout_marginLeft="10dip"
+        android:layout_marginRight="10dip"
+        android:background="#1DD4FF"
+        android:gravity="center"
+        android:text="发送" />
+
+</LinearLayout>

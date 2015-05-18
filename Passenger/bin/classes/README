@@ -1,0 +1,589 @@
+这里会有在客运的时候，就可以连接到媒体机（服务器），然后就可以弹幕以及现场看电影那一系列的功能，如果判断连接不到媒体机，我们应该尝试
+将其弹幕换成首页以及灭幼可以观看的电影，只有离线下载好了的才可以看。
+
+
+打开首页默认获取数据，但是要想连接外网，必须要是注册用户才行，也就是在用户登录后，默认去服务端认证，如果每次进入应用，检测到已经有用户的存在了
+就直接自己去请求外网，但是，在每次弹幕的时候，必须严格要求用户的登录。
+
+
+
+无线：MTALL-000F11
+密码：12345678
+默认打开应用，然后就去连接到这个WIFI，如果没有这个WIFI，提示无法连接
+
+
+
+Q:下载的时候，总是出现无法扑捉null指针的问题
+
+
+
+
+2015-02-27
+
+服务器那边还存在的问题：
+
+应该把所有的项目里面的小说以及新闻里面的内容的标签去掉，然后还有将服务器里面的内容·应该放到公网上，这样我们才能够
+在外网的情况下也能访问。以及吧数据都应该弄的更真实
+
+客户端这边还存在的问题：
+
+下载，重复下载的问题还存在
+原因：数据库里面可能总是不能识别到这个数据已经有了
+
+// public void downloadapk(final String fileName, final String fileUrl) {
+	// Logger.log("currentFileName:" + fileName + ",fileUrl:" + fileUrl);
+	// // 判断文件是否存在(如果存在则删除)
+	// try {
+	// boolean isFileExist = FileUtils.delectFile(target + fileName);
+	// Logger.log("isFileExist:" + isFileExist);
+	// } catch (IOException e) {
+	// Logger.log("deleteFoder failed:" + e.getLocalizedMessage());
+	// }
+	//
+	// httpHandler = finalHttp.download(fileUrl, target + fileName, true,
+	// new AjaxCallBack<File>() {
+	// @Override
+	// public void onStart() {
+	// Logger.log("开始下载");
+	// }
+	//
+	// @Override
+	// public void onLoading(long count, long current) {
+	// Logger.log(current + "/" + count);
+	// }
+	//
+	// @Override
+	// public void onSuccess(final File t) {
+	// Logger.log("下载成功");
+	// Logger.log(t.getAbsolutePath() + "======<><><><><><>");
+	//
+	// // 如果是apk的话就执行安装
+	// if (".apk".equals(extensionName)) {
+	// // 强制安装
+	// boolean isInstall = LauncherBiz
+	// .execCommand("system/bin/pm install -r "
+	// + "mnt/sdcard/" + fileName);
+	//
+	// Logger.log("isInstall:" + isInstall);
+	// } else {
+	// Logger.log("下载文件不是apk文件");
+	// }
+	// }
+	//
+	// @Override
+	// public void onFailure(Throwable t, String strMsg) {
+	// Logger.log("下载apk失败");
+	// Logger.log(strMsg + "=====================");
+	// }
+	//
+	// });
+	// }
+	
+	
+	
+	这里还要考虑到要加密
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	//================这是xUtils里面独立出来的一部分代码，我单独写了adapter
+	// ------------------------------------------------建立一个内部adapter-------------------
+	// private class DownloadListAdapter extends BaseAdapter {
+	// private int flag = 0;
+	// private final Context mContext;
+	// private final LayoutInflater mInflater;
+	// DownloadInfo VideodownloadInfo, GamedownloadInfo, NoveldownloadInfo;
+	// List<DownloadInfo> listVedio, listGame, listNovel;
+	//
+	// private DownloadListAdapter(Context context, int flag) {
+	// mContext = context;
+	// mInflater = LayoutInflater.from(mContext);
+	// this.flag = flag;
+	// }
+	//
+	// List<DownloadInfo> AllDownLoadInfo = new ArrayList<DownloadInfo>();
+	//
+	// @Override
+	// public int getCount() {
+	// listVedio = new ArrayList<DownloadInfo>();
+	// listGame = new ArrayList<DownloadInfo>();
+	// listNovel = new ArrayList<DownloadInfo>();
+	// if (downloadManager == null)
+	// return 0;
+	// AllDownLoadInfo = downloadManager.getAllDownLoadInfo();
+	//
+	// for (int i = 0; i < AllDownLoadInfo.size(); i++) {
+	// if (AllDownLoadInfo.get(i).getFlag().equals("apk")) {
+	// listGame.add(AllDownLoadInfo.get(i));
+	// } else if (AllDownLoadInfo.get(i).getFlag().equals("mp4")) {
+	// listVedio.add(AllDownLoadInfo.get(i));
+	// } else {
+	// listNovel.add(AllDownLoadInfo.get(i));
+	// }
+	// }
+	// if (flag == 0) {
+	// SetDefault(listVedio);
+	// return listVedio.size();
+	//
+	// } else if (flag == 1) {
+	// SetDefault(listNovel);
+	// return listNovel.size();
+	//
+	// } else {
+	// SetDefault(listGame);
+	// return listGame.size();
+	//
+	// }
+	//
+	// }
+	//
+	// public void SetDefault(List<DownloadInfo> down) {
+	// isChice = new boolean[down.size()];
+	// for (int i = 0; i < down.size(); i++) {
+	// isChice[i] = false;
+	// }
+	// }
+	//
+	// @Override
+	// public Object getItem(int i) {
+	// if (flag == 0) {
+	// return listVedio.get(i);
+	// // return downloadManager.getDownloadInfo(i);
+	// } else if (flag == 1) {
+	// return listNovel.get(i);
+	// // return downloadManager.getDownloadInfo(i);
+	// } else {
+	// return listGame.get(i);
+	// // return downloadManager.getDownloadInfo(i);
+	// }
+	//
+	// }
+	//
+	// @Override
+	// public long getItemId(int i) {
+	// return i;
+	// }
+	//
+	// public void CheckUpdate(int id) {
+	// flag = id;
+	//
+	// }
+	//
+	// DownloadItemViewHolder holder = null;
+	// DownloadInfo downloadInfo;
+	//
+	// @SuppressWarnings("unchecked")
+	// @Override
+	// public View getView(int i, View view, ViewGroup viewGroup) {
+	// System.out.println("getview");
+	//
+	// if (flag == 0) {
+	// downloadInfo = listVedio.get(i);
+	// } else if (flag == 1) {
+	// downloadInfo = listNovel.get(i);
+	// } else {
+	// downloadInfo = listGame.get(i);
+	// }
+	// // DownloadInfo downloadInfo = downloadManager.getDownloadInfo(i);
+	// if (view == null) {
+	// view = mInflater.inflate(R.layout.download_item, null);
+	// holder = new DownloadItemViewHolder(downloadInfo);
+	//
+	// ViewUtils.inject(holder, view);
+	// view.setTag(holder);
+	// // 更新列表
+	// holder.refresh(0);
+	// } else {
+	// holder = (DownloadItemViewHolder) view.getTag();
+	// // 更新
+	// holder.update(downloadInfo, 0);
+	// }
+	//
+	// HttpHandler<File> handler = downloadInfo.getHandler();
+	// if (handler != null) {
+	// RequestCallBack callBack = handler.getRequestCallBack();
+	// if (callBack instanceof DownloadManager.ManagerCallBack) {
+	// DownloadManager.ManagerCallBack managerCallBack =
+	// (DownloadManager.ManagerCallBack) callBack;
+	// if (managerCallBack.getBaseCallBack() == null) {
+	// managerCallBack
+	// .setBaseCallBack(new DownloadRequestCallBack());
+	// }
+	// }
+	// callBack.setUserTag(new WeakReference<DownloadItemViewHolder>(
+	// holder));
+	// }
+	// if (btn_edit.getText().toString().equals("取消")) {
+	// System.out.println("我想选中。");
+	// holder.removeBtn.setBackgroundDrawable(getView(i));
+	// } else {
+	// System.out.println("不能进行编辑");
+	// }
+	//
+	// return view;
+	// }
+	//
+	// private boolean isChice[];
+	// /**
+	// *
+	// *
+	// * @param position用来表示点击的位置
+	// * @param flags用来判断是否需要全部下载
+	// * 。如果为false就是不用
+	// * */
+	// VideoDowningDB v_DownDB = null;
+	//
+	// public void ChooseState(int position, boolean flags, boolean flag) {
+	// if (flags) {
+	//
+	// isChice[position] = isChice[position] == true ? true : true;
+	// } else {
+	// // isChice[position] = isChice[position] == true ? false : flag;
+	// isChice[position] = isChice[position] == true ? false : true;
+	// }
+	// this.notifyDataSetChanged();
+	//
+	// }
+	//
+	// // 主要就是下面的代码了
+	// private LayerDrawable getView(int post) {
+	//
+	// Bitmap bitmap = ((BitmapDrawable) mContext.getResources()
+	// .getDrawable(R.drawable.icon_select_default)).getBitmap();
+	// Bitmap bitmap2 = null;
+	// LayerDrawable la = null;
+	// if (isChice[post] == true) {
+	// bitmap2 = BitmapFactory.decodeResource(mContext.getResources(),
+	// R.drawable.icon_select_foucs);
+	// }
+	//
+	// if (bitmap2 != null) {
+	// Drawable[] array = new Drawable[1];
+	// // array[0] = new BitmapDrawable(bitmap);
+	// array[0] = new BitmapDrawable(bitmap2);
+	// la = new LayerDrawable(array);
+	// la.setLayerInset(0, 0, 0, 0, 0); // 第几张图离各边的间距
+	// // la.setLayerInset(1, 0, 65, 65, 0);
+	// } else {
+	// Drawable[] array = new Drawable[1];
+	// array[0] = new BitmapDrawable(bitmap);
+	// la = new LayerDrawable(array);
+	// la.setLayerInset(0, 0, 0, 0, 0);
+	// }
+	// return la; // 返回叠加后的图
+	// }
+	//
+	// }
+	//
+	// public class DownloadItemViewHolder {
+	// @ViewInject(R.id.download_label)
+	// TextView label;
+	// // @ViewInject(R.id.download_state)
+	// // TextView state;
+	// @ViewInject(R.id.download_pb)
+	// ProgressBar progressBar;
+	// @ViewInject(R.id.download_stop_btn)
+	// Button stopBtn;
+	// @ViewInject(R.id.download_remove_btn)
+	// Button removeBtn;
+	// @ViewInject(R.id.download_progress)
+	// TextView download_progress;
+	// private DownloadInfo downloadInfo;
+	//
+	// public DownloadItemViewHolder(DownloadInfo downloadinfo) {
+	// if (downloadinfo.getFlag().equals("apk")) {
+	// System.out.println("this is apk,and the downloadInfo is====>"
+	// + downloadinfo.getFileName());
+	//
+	// } else if (downloadinfo.getFlag().equals("mp4")) {
+	// System.out.println("this is mp4,and the downloadInfo is====>"
+	// + downloadinfo.getFileName());
+	// } else {
+	// System.out.println("this is novel,and the downloadInfo is====>"
+	// + downloadinfo.getFileName());
+	// }
+	// this.downloadInfo = downloadinfo;
+	//
+	// }
+	//
+	// @OnClick(R.id.download_stop_btn)
+	// public void stop(View view) {
+	// HttpHandler.State state = downloadInfo.getState();
+	// System.out.println("点击的当前的文件的名字是===》" + label.getText());
+	//
+	// switch (state) {
+	// case WAITING:
+	// case STARTED:
+	// case LOADING:
+	// try {
+	// downloadManager.stopDownload(downloadInfo);
+	// } catch (DbException e) {
+	// LogUtils.e(e.getMessage(), e);
+	// }
+	// break;
+	// case CANCELLED:
+	// case FAILURE:
+	// try {
+	// downloadManager.resumeDownload(downloadInfo,
+	// new DownloadRequestCallBack());
+	// } catch (DbException e) {
+	// LogUtils.e(e.getMessage(), e);
+	// }
+	// downloadListAdapter.notifyDataSetChanged();
+	// if (download_progress.toString().equals("100%")) {
+	// StartPlay(view);
+	// } else {
+	//
+	// }
+	//
+	// break;
+	// case SUCCESS:
+	// StartPlay(view);
+	// break;
+	// default:
+	// break;
+	// }
+	// }
+	//
+	// public void StartPlay(View view) {
+	//
+	// System.out.println("我点击了观看" + view.getTag() + label.getText());
+	// if (label.getText().toString().contains(".apk")) {
+	// // 游戏
+	// File file = new File(Configure.GameFile
+	// + label.getText().toString());
+	// openFile(file);
+	// } else if (label.getText().toString().contains(".mp4")) {
+	// // 视频
+	// Intent intent = new Intent();
+	// intent.putExtra("vedio", label.getText().toString());
+	// intent.setClass(DownloadListActivity.this,
+	// VedioPlayActivity.class);
+	// startActivity(intent);
+	// } else {
+	// // 小说
+	//
+	// }
+	// }
+	//
+	// @OnClick(R.id.download_remove_btn)
+	// public void RemoveBtn(View view) {
+	// //
+	// // downloadListAdapter.ChooseState((Integer) view.getTag(), false,
+	// // true);
+	//
+	// if (null == DowningDB) {
+	// DowningDB = new DowningVideoDB(mAppContext);
+	// }
+	// DowningDB.delete(downloadInfo.fileName);
+	// System.out.println("将要删除的问价的名字是====》" + downloadInfo.fileName
+	// + "===以及下载文件的路径===>" + downloadInfo.downloadUrl);
+	// try {
+	// downloadManager.removeDownload(downloadInfo);
+	// downloadListAdapter.notifyDataSetChanged();
+	// } catch (DbException e) {
+	// LogUtils.e(e.getMessage(), e);
+	// }
+	// }
+	//
+	// /**
+	// *
+	// * 如果在这里，我们安装成功，就可以直接弹出安装界面了 在手机上打开文件
+	// */
+	// public void openFile(File f) {
+	// Intent intent = new Intent();
+	// intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+	// intent.setAction(android.content.Intent.ACTION_VIEW);
+	//
+	// /* 调用getMIMEType()来取得MimeType */
+	// String type = "application/vnd.android.package-archive";
+	// /* 设置intent的file与MimeType */
+	// intent.setDataAndType(Uri.fromFile(f), type);
+	// mAppContext.startActivity(intent);
+	// }
+	//
+	// DowningVideoDB DowningDB = null;
+	//
+	// public void update(DownloadInfo downloadInfo, int flag) {
+	// if (downloadInfo.getFlag().equals("apk")) {
+	// System.out.println("this is apk,and the downloadInfo is====>"
+	// + downloadInfo.getFileName());
+	//
+	// } else if (downloadInfo.getFlag().equals("mp4")) {
+	// System.out.println("this is mp4,and the downloadInfo is====>"
+	// + downloadInfo.getFileName());
+	// } else {
+	// System.out.println("this is novel,and the downloadInfo is====>"
+	// + downloadInfo.getFileName());
+	// }
+	// this.downloadInfo = downloadInfo;
+	// // 更新列表
+	// refresh(flag);
+	// }
+	//
+	// public void refresh(int id) {
+	// System.out.println("我已经更新了下载列表！");
+	// if (id == 0) {
+	// label.setText(downloadInfo.getFileName());
+	// // label.setText(downloadInfo.getFileName());
+	// // state.setText(downloadInfo.getState().toString());
+	// if (downloadInfo.getFileLength() > 0) {
+	// progressBar
+	// .setProgress((int) (downloadInfo.getProgress() * 100 / downloadInfo
+	// .getFileLength()));
+	// download_progress
+	// .setText((downloadInfo.getProgress() * 100 / downloadInfo
+	// .getFileLength()) + "%");
+	// } else {
+	// progressBar.setProgress(0);
+	// }
+	// if (download_progress.getText().equals("100%")) {
+	// progressBar.setProgress(100);
+	// }
+	//
+	// stopBtn.setVisibility(View.VISIBLE);
+	// // stopBtn.setText(mAppContext.getString(R.string.stop));
+	// stopBtn.setBackgroundResource(R.drawable.icon_stop);
+	// HttpHandler.State state = downloadInfo.getState();
+	// switch (state) {
+	// case WAITING:
+	// // stopBtn.setText(mAppContext.getString(R.string.stop));
+	// stopBtn.setBackgroundResource(R.drawable.icon_downing);
+	// break;
+	// case STARTED:
+	// // stopBtn.setText(mAppContext.getString(R.string.stop));
+	// stopBtn.setBackgroundResource(R.drawable.icon_downing);
+	// break;
+	// case LOADING:
+	// // stopBtn.setText(mAppContext.getString(R.string.stop));
+	// stopBtn.setBackgroundResource(R.drawable.icon_downing);
+	// break;
+	// case CANCELLED:
+	// // stopBtn.setText(mAppContext.getString(R.string.resume));
+	// stopBtn.setBackgroundResource(R.drawable.icon_retry);
+	// break;
+	// case SUCCESS:
+	// // stopBtn.setVisibility(View.INVISIBLE);
+	// // stopBtn.setText(mAppContext.getString(R.string.success));
+	// // 判断是视频还是小说还是游戏，然后进行安装还是进行播放
+	// if (downloadInfo.getFileName().contains(".apk")) {
+	// stopBtn.setBackgroundResource(R.drawable.icon_install);
+	// } else if (downloadInfo.getFileName().contains(".mp4")) {
+	// stopBtn.setBackgroundResource(R.drawable.icon_start);
+	//
+	// } else {
+	// stopBtn.setBackgroundResource(R.drawable.icon_read);
+	// }
+	// // stopBtn.setBackgroundResource(R.drawable.icon_start);
+	// // progressBar.setVisibility(View.GONE);
+	// break;
+	// case FAILURE:
+	// // stopBtn.setText(mAppContext.getString(R.string.retry));
+	// if (download_progress.toString().equals("100%")) {
+	// if (downloadInfo.getFileName().contains(".apk")) {
+	// stopBtn.setBackgroundResource(R.drawable.icon_install);
+	// } else if (downloadInfo.getFileName().contains(".mp4")) {
+	// stopBtn.setBackgroundResource(R.drawable.icon_start);
+	//
+	// } else {
+	// stopBtn.setBackgroundResource(R.drawable.icon_read);
+	// }
+	// } else {
+	// stopBtn.setBackgroundResource(R.drawable.icon_retry);
+	//
+	// }
+	//
+	// break;
+	// default:
+	// break;
+	// }
+	// } else if (id == 1) {
+	// } else {
+	// }
+	//
+	// }
+	// }
+	//
+	// private class DownloadRequestCallBack extends RequestCallBack<File> {
+	//
+	// @SuppressWarnings("unchecked")
+	// private void refreshListItem() {
+	// if (userTag == null)
+	// return;
+	// WeakReference<DownloadItemViewHolder> tag =
+	// (WeakReference<DownloadItemViewHolder>) userTag;
+	// DownloadItemViewHolder holder = tag.get();
+	// if (holder != null) {
+	// // 更新列表
+	// holder.refresh(0);
+	// }
+	// }
+	//
+	// @Override
+	// public void onStart() {
+	// refreshListItem();
+	// }
+	//
+	// @Override
+	// public void onLoading(long total, long current, boolean isUploading) {
+	// refreshListItem();
+	// }
+	//
+	// @Override
+	// public void onSuccess(ResponseInfo<File> responseInfo) {
+	// refreshListItem();
+	// }
+	//
+	// @Override
+	// public void onFailure(HttpException error, String msg) {
+	// refreshListItem();
+	// }
+	//
+	// @Override
+	// public void onCancelled() {
+	// refreshListItem();
+	// }
+	// }
+
+	// ----------------------------------------------------------------
+	
+	
+	
+	
+	2015-05-13
+	对于下载，这里一直会存在一个问题：如果用户直接将文件里面的数据给删除掉呢？
+	if(每次下载都存入数据库，删除呢)
+	1：下载，存入数据库（已解决）
+	2：显示：应该是读取本地文件进行显示，但是，在显示之前，应该判断当前的数据库是否有这个文件，不然就不给于显示
+	3：如果这里存在用户将本地的文件给删掉了，第二个问题就是用户将应用删掉重新安装后，本地的数据还在怎么办？（在应用重新安装的时候，我们应该先
+	判断当前的文件夹里面看是否存在关于应用的下载路径，如果有的话，应该进行删掉或者监听本应用的卸载过程）
+	4：每次在删除的时候，不仅仅要删除数据库里面的数据，还要删除文件夹下面的内容(已解决)
+	
+	
+	2015-05-14
+	应该将用户手动全选后，然后将底部的文字改成相应的文字（已解决）
+	
+	对下载好的东西进行显示的时候通过显示数据库里面的东西，然后再本地查询，如果有再显示，没有就直接删除。
+	对于每次应用开始时候进行对应用的下载文件进行检测删除。(已解决)
+	
+	
+	2015-05-15
+	
+	今天和美工看了一下整个项目，当然这里发现了几个需要修改的地方。
+	
+	
+	第一：把加载的图片改了以及将下载的删除键删掉，(已解决)
+	第二：	以及将下载的界面改成宫格形式
+	第三：点击视频播放的时候出现了错误...(已解决)
+	第四：好像幻灯片出现了手势读取错误的感觉。。。

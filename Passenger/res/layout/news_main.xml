@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res/com.ky.passenger"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <FrameLayout
+        android:id="@+id/layout_top"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/nav_height"
+        android:layout_alignParentTop="true"
+        android:background="@color/bg_nav_color"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="新闻列表"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_one" />
+
+        <Button
+            android:id="@+id/btn_return"
+            android:layout_width="100dip"
+            android:layout_height="@dimen/nav_height"
+            android:layout_marginLeft="15dip"
+            android:background="#00000000"
+            android:drawableLeft="@drawable/icon_return"
+            android:gravity="left|center_vertical" />
+    </FrameLayout>
+
+    <com.handmark.pulltorefresh.library.PullToRefreshScrollView
+        android:id="@+id/pull_refresh_scrollview"
+        style="@style/Scorll_Style"
+        android:background="#fff"
+        android:descendantFocusability="afterDescendants"
+        ptr:ptrAnimationStyle="flip"
+        ptr:ptrMode="pullFromEnd" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:id="@+id/layout_news_viewflow"
+                android:layout_width="match_parent"
+                android:layout_height="200dip"
+                android:orientation="vertical" >
+
+                <org.taptwo.android.widget.ViewFlow
+                    android:id="@+id/viewflow"
+                    android:layout_width="fill_parent"
+                    android:layout_height="160dip" >
+                </org.taptwo.android.widget.ViewFlow>
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="36dip"
+                    android:layout_gravity="center"
+                    android:background="#555"
+                    android:padding="3dip" >
+
+                    <TextView
+                        android:id="@+id/text_View"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left|center_vertical"
+                        android:layout_marginLeft="10dip"
+                        android:layout_weight="2"
+                        android:text="每一步只为你"
+                        android:textColor="#fff"
+                        android:textSize="@dimen/text_five" />
+
+                    <org.taptwo.android.widget.CircleFlowIndicator
+                        android:id="@+id/viewflowindic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="right|center_vertical"
+                        android:layout_weight="0.2"
+                        android:padding="1dip"
+                        app:activeColor="#ff0000"
+                        app:activeType="fill"
+                        app:circleSeparation="15dip"
+                        app:inactiveColor="#ffffff"
+                        app:inactiveType="fill"
+                        app:radius="4dip" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/list_new"
+                android:layout_width="match_parent"
+                android:layout_height="500dip"
+                android:divider="@null"
+                android:fadingEdge="none"
+                android:fastScrollEnabled="false"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:footerDividersEnabled="false"
+                android:headerDividersEnabled="false"
+                android:listSelector="#00000000"
+                android:scrollbars="none"
+                android:smoothScrollbar="true" />
+        </LinearLayout>
+    </com.handmark.pulltorefresh.library.PullToRefreshScrollView>
+
+</LinearLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/menu_height"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/btn_height"
+        android:layout_gravity="center"
+        android:layout_marginBottom="5dip"
+        android:gravity="center"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_resouce_name"
+            style="@style/TextStyle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.3"
+            android:textColor="#000"
+            android:textSize="@dimen/text_four" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <Button
+                android:id="@+id/btn_pause"
+                android:layout_width="30dip"
+                android:layout_height="30dip"
+                android:background="@drawable/icon_down_pause" />
+        </LinearLayout>
+        <!-- android:text="暂停" -->
+        <!-- android:textColor="#fff" -->
+        <!-- android:textSize="@dimen/text_four" -->
+
+
+        <!-- <Button -->
+        <!-- android:id="@+id/btn_start" -->
+        <!-- android:layout_width="match_parent" -->
+        <!-- android:layout_height="30dip" -->
+        <!-- android:layout_weight="1" -->
+        <!-- android:background="#1DD4FF" -->
+        <!-- android:text="下载" -->
+        <!-- android:textColor="#fff" -->
+        <!-- android:textSize="@dimen/text_four" -->
+        <!-- android:visibility="gone" /> -->
+    </LinearLayout>
+
+    <!-- <LinearLayout -->
+    <!-- android:layout_width="match_parent" -->
+    <!-- android:layout_height="match_parent" -->
+    <!-- android:layout_gravity="center" -->
+    <!-- android:layout_weight="1" -->
+    <!-- android:gravity="center" -->
+    <!-- android:orientation="horizontal" > -->
+
+
+    <ProgressBar
+    android:id="@+id/download_progress"
+    android:layout_width="match_parent"
+    android:layout_height="2dip"
+    android:layout_gravity="center"
+    android:indeterminate="false"
+    android:indeterminateOnly="false"
+    android:maxHeight="5dp"
+    android:minHeight="5dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
+    android:progress="0"
+    android:progressDrawable="@drawable/progressbar_horizontal_1"
+    android:secondaryProgress="0" />
+    <!-- </LinearLayout> -->
+
+</LinearLayout>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dip"
+        android:layout_weight="1" >
+
+        <ImageView
+            android:id="@+id/game_image_one"
+            android:layout_width="match_parent"
+            android:layout_height="240dip"
+            android:layout_gravity="center"
+            android:layout_margin="5dip"
+            android:background="@drawable/image_novel_eight"
+            android:scaleType="fitXY" />
+
+        <TextView
+            android:id="@+id/game_text_one"
+            android:layout_width="match_parent"
+            android:layout_height="30dip"
+            android:layout_marginLeft="6dip"
+            android:layout_marginRight="6dip"
+            android:layout_marginTop="205dip"
+            android:background="@drawable/image_botton_title_more"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="@string/text_default"
+            android:textColor="#fff"
+            android:textSize="@dimen/text_five" />
+    </RelativeLayout>
+
+</LinearLayout>
